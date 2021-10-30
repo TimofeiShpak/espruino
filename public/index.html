@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Нагрузка преподавателей</title>
+
+    <link rel="stylesheet" href="libraries/jquery.dataTables.css">
+    <link rel="stylesheet" href="libraries/select.dataTables.min.css">
+</head>
+<body>
+    <div class="modal-wrapper hide" id="modalTeacher">
+        <div class="modal-content">
+            <div class="title" id="modalTitle"></div>
+            <div class="modal-item">
+                <label for="selectTeacher">Выберете преподавателя</label>
+                <select id="selectTeacher"></select>
+            </div>
+            <div class="modal-item">
+                <label for="selectTeacher">Выберете вид работ</label>
+                <form id="selectModeWork"></form>
+            </div>
+            <button id="closeModal">отмена</button>
+            <button id="saveDataModal">сохранить</button>
+        </div>
+    </div>
+    <div id="tableVisibleMenu"></div>
+    <table class="display" id="example">
+    </table>
+    <input type="file" id="fileUploader" />
+    <input type="file" id="fileUploaderTeacher" />
+    <script src="libraries/xlsx.full.min.js"></script>
+    <script src="libraries/jquery.min.js"></script>
+    <script src="libraries/dataTables.min.js"></script>
+    <script src="libraries/dataTables.buttons.min.js"></script>
+    <script src="libraries/jszip.js"></script>
+    <script src="libraries/buttons.html5.min.js"></script>
+    <script src="libraries/dataTables.select.min.js"></script>
+    <script src="index.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+</body>
+</html>
