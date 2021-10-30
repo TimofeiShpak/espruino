@@ -1,20 +1,20 @@
 const path = require('path');
 const express = require('express');
-const morgan = require('morgan');
-const helmet = require('helmet');
-const monk = require('monk');
-const { addAbortSignal } = require('stream');
-const jsonParser = express.json();
-require('dotenv').config();
+// const morgan = require('morgan');
+// const helmet = require('helmet');
+// const monk = require('monk');
+// const { addAbortSignal } = require('stream');
+// const jsonParser = express.json();
+// require('dotenv').config();
 
-const db = monk(process.env.MONGODB_URI || 'mongodb+srv://admin:Hora1234@cluster0.ouwqb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
-const users = db.get('users');
+// const db = monk(process.env.MONGODB_URI || 'mongodb+srv://admin:Hora1234@cluster0.ouwqb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+// const users = db.get('users');
 
 const app = express();
 app.enable('trust proxy');
 
-app.use(helmet());
-app.use(morgan('common'));
+// app.use(helmet());
+// app.use(morgan('common'));
 app.use(express.json());
 app.use(express.static('./public'));
 
