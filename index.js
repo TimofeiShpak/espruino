@@ -47,6 +47,7 @@ app.post("/", async (req, res) => {
     try {
         if(!req.body) return res.status(404).sendFile(notFoundPath);
         handlePOST(req, res)
+        res.status(200).sendFile(notFoundPath);
     } catch (error) {
         return res.status(404).sendFile(notFoundPath);
     }
