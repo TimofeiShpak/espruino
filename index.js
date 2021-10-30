@@ -18,22 +18,30 @@ app.use(morgan('common'));
 app.use(express.json());
 app.use(express.static('./public'));
 
-const notFoundPath = path.join(__dirname, 'public/404.html');
+const notFoundPath = path.join(__dirname, 'public/index.html');
+let postData = {};
 
 function handlePOST(req, res) {
     var data = "";
-    req.on('data', function(d) { data += d; console.log(data); });
+    req.on('data', function(d) { data += d; });
     req.on('end', function() {
         postData = {};
         data.split("&").forEach(function(el) {
         var els = el.split("=");
         postData[els[0]] = decodeURIComponent(els[1]);
         });
-        console.log('code-1', postData.code);
-        res.send(postData.code);
-        eval(postData.code);
     });
 }
+
+app.post("/d", async (req, res) => {
+    try {
+        if(!req.body) return res.status(404).sendFile(notFoundPath);
+        console.log(postData)
+        return res.send(postData.code);
+    } catch (error) {
+        return res.status(404).sendFile(notFoundPath);
+    }
+});
 
 app.post("/", async (req, res) => {
     try {
