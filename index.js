@@ -31,7 +31,7 @@ function handlePOST(req) {
       var els = el.split("=");
       postData[els[0]] = decodeURIComponent(els[1]);
     });
-    console.log('code-1', postData.code);
-    eval(postData.code)
+    // console.log('code-1', postData.code);
+    // eval(postData.code)
   });
 }
