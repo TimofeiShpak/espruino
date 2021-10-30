@@ -33,7 +33,7 @@ function handlePOST(req, res) {
     });
 }
 
-app.post("/d", async (req, res) => {
+app.get("/d", async (req, res) => {
     try {
         if(!req.body) return res.status(404).sendFile(notFoundPath);
         console.log(postData)
